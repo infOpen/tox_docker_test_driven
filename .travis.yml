@@ -11,18 +11,14 @@ services:
 language: python
 
 env:
-  - >
-    ANSIBLE_ROLES_PATH="${TRAVIS_BUILD_DIR%/*/*}"
-    TOXENV=py27-ansible19
-  - >
-    ANSIBLE_ROLES_PATH="${TRAVIS_BUILD_DIR%/*/*}"
-    TOXENV=py27-ansible20
-  - >
-    ANSIBLE_ROLES_PATH="${TRAVIS_BUILD_DIR%/*/*}"
-    TOXENV=py27-ansible21
-  - >
-    ANSIBLE_ROLES_PATH="${TRAVIS_BUILD_DIR%/*/*}"
-    TOXENV=py27-ansible-devel
+  global:
+    - ANSIBLE_ROLES_PATH="${TRAVIS_BUILD_DIR%/*/*}"
+
+  matrix:
+    - TOXENV=py27-ansible19
+    - TOXENV=py27-ansible20
+    - TOXENV=py27-ansible21
+    - TOXENV=py27-ansible-devel
 
 install:
 
