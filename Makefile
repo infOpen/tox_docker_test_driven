@@ -3,5 +3,11 @@ clean-test:
 	rm -f .coverage
 	rm -fr reports/
 
-test:
+test-all:
 	tox
+
+test-env:
+ifndef TOXENV
+	$(error TOXENV is undefined)
+endif
+	tox -e "${TOXENV}"
