@@ -18,31 +18,15 @@ env:
     - ANSIBLE_ROLES_PATH="${TRAVIS_BUILD_DIR%/*/*}"
 
   matrix:
-    - >
-      TOXENV='py27-ansible19'
-      DOCKER_IMAGE='ubuntu:14.04'
-    - >
-      TOXENV='py27-ansible19'
-      DOCKER_IMAGE='ubuntu:16.04'
-    - >
-      TOXENV='py27-ansible20'
-      DOCKER_IMAGE='ubuntu:14.04'
-    - >
-      TOXENV='py27-ansible20'
-      DOCKER_IMAGE='ubuntu:16.04'
-    - >
-      TOXENV='py27-ansible21'
-      DOCKER_IMAGE='ubuntu:14.04'
-    - >
-      TOXENV='py27-ansible21'
-      DOCKER_IMAGE='ubuntu:16.04'
-    - >
-      TOXENV='py27-ansible-devel'
-      DOCKER_IMAGE='ubuntu:14.04'
-    - >
-      TOXENV='py27-ansible-devel'
-      DOCKER_IMAGE='ubuntu:16.04'
+    - TOXENV='py27-ansible19'
+    - TOXENV='py27-ansible20'
+    - TOXENV='py27-ansible21'
+    - TOXENV='py27-ansible-devel'
 
+before_install:
+
+  # Create SSH keys
+  -  cat /dev/zero | ssh-keygen -q -N ""
 install:
 
   # Install tox dependency
