@@ -2,8 +2,8 @@
 Role tests
 """
 import pytest
+import testinfra
 
-# Not wokg :/
 # To mark all the tests as destructive:
 # pytestmark = pytest.mark.destructive
 
