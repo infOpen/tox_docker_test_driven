@@ -2,7 +2,6 @@
 Role tests
 """
 import pytest
-import testinfra
 
 # To mark all the tests as destructive:
 # pytestmark = pytest.mark.destructive
@@ -19,5 +18,8 @@ pytestmark = pytest.mark.docker_images('infopen/ubuntu-trusty-ssh')
 # ]
 
 
-def test_foo(User):
+def test_foo_a(User):
+    assert User().name == 'root'
+
+def test_foo_b(User):
     assert User().name == 'root'
