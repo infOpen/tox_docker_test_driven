@@ -1,3 +1,0 @@
-[submodule "tests/external/pytest-ansible-docker"]
-	path = tests/external/pytest-ansible-docker
-	url = https://github.com/infOpen/pytest-ansible-docker.git
